@@ -1,9 +1,45 @@
-<section class="clock" style="float:right;">
+<section class="visible-desktop hidden-phone clock" style="float:right;">
 <br>
-<span id="nextfreeze"> {{ _('Time until freeze') }} <span data-countdown="{{ nextfreezedate }}"></span> &nbsp; <br/> </span>
-<span id="nextrelease"> {{ _('Time until packaging') }} <span data-countdown="{{ nextreleasedate }}"></span> &nbsp; <br/> </span>
-<span id="nextpointreleasedate"> {{ _('Time until next pointrelease') }} <span data-countdown="{{ nextpointreleasedate }}"></span> &nbsp; </span>
+<div class="accordion" id="releases-accordion">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#releases-accordion" href="#collapseDesktopDiv"
+         style="font-weight: bold; color: #465064; text-decoration: none;">
+        Upcoming Release Information
+      </a>
+    </div>
+    <div id="collapseDesktopDiv" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <span id="nextfreeze"> {{ _('Time until freeze') }} <span data-countdown="{{ nextfreezedate }}"></span> &nbsp; <br/> </span>
+        <span id="nextrelease"> {{ _('Time until packaging') }} <span data-countdown="{{ nextreleasedate }}"></span> &nbsp; <br/> </span>
+        <span id="nextpointreleasedate"> {{ _('Time until next pointrelease') }} <span data-countdown="{{ nextpointreleasedate }}"></span> &nbsp; </span>
+      </div>
+    </div>
+  </div>
+</div>
 </section>
+
+<section class="container visible-phone hidden-desktop text-center clock" style="width: 100%;">
+<br>
+<div class="accordion" id="mobile-releases-accordion">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#mobile-releases-accordion" href="#collapseMobileDiv"
+         style="font-weight: bold; color: #465064; text-decoration: none;">
+        Upcoming Release Information
+      </a>
+    </div>
+    <div id="collapseMobileDiv" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <span id="nextfreeze"> {{ _('Time until freeze') }} <span data-countdown="{{ nextfreezedate }}"></span> &nbsp; <br/> </span>
+        <span id="nextrelease"> {{ _('Time until packaging') }} <span data-countdown="{{ nextreleasedate }}"></span> &nbsp; <br/> </span>
+        <span id="nextpointreleasedate"> {{ _('Time until next pointrelease') }} <span data-countdown="{{ nextpointreleasedate }}"></span> &nbsp; </span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
 <section class="info">
     <div class="container">
         <h1>{{ _('QGIS') }}</h1>
